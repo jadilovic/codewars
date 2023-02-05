@@ -69,3 +69,17 @@ function alphabetPosition(text) {
 	return numbers.join(' ');
 }
 console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+// Return the number (count) of vowels in the given string
+const getCount = (str) => {
+	const vowels = ['a', 'i', 'e', 'o', 'u'];
+	const letters = str.match(/[a-zA-Z]/g);
+	let count = 0;
+	letters?.map((letter) => {
+		if (vowels.includes(letter)) {
+			count++;
+		}
+	});
+	return count;
+};
+console.log(getCount('abracadabra'));
