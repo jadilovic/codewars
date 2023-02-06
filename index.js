@@ -83,3 +83,38 @@ const getCount = (str) => {
 	return count;
 };
 console.log(getCount('abracadabra'));
+
+// Printer errors
+const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
+const printerString = 'aaaxbbbbyyhwawiwjjjwwm';
+
+const printerErrors = (string) => {
+	const colorsString = 'abcdefghijklm';
+	let countErrors = 0;
+	string.split('').forEach((letter) => {
+		if (!colorsString.includes(letter)) {
+			countErrors++;
+		}
+	});
+	return `${countErrors}/${string.length}`;
+};
+console.log(printerErrors(printerString));
+
+// prime numbers
+function isPrime(num) {
+	// if (num <= 1) return false;
+	// if (num === 2) return true;
+	// for (let i = 2; i < num; i++) {
+	// 	if (num % i === 0) {
+	// 		return false;
+	// 	}
+	// }
+	// return true;
+	for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+		if (num % i === 0) return false;
+	}
+	return num > 1;
+}
+console.log(isPrime(75));
+console.log(isPrime(9801));
+console.log(isPrime(13037));
