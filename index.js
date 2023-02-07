@@ -118,3 +118,49 @@ function isPrime(num) {
 console.log(isPrime(75));
 console.log(isPrime(9801));
 console.log(isPrime(13037));
+
+// string tokens
+const str = "He is a very very good boy, isn't he?";
+
+function isLetter(c) {
+	return c.toLowerCase() !== c.toUpperCase();
+}
+
+const createTokens = (str) => {
+	const strArr = str.split('');
+	const tokenArr = [];
+	let token = '';
+	strArr.forEach((element) => {
+		if (isLetter(element)) {
+			token += element;
+		} else {
+			if (isLetter(token)) {
+				tokenArr.push(token);
+			}
+			token = '';
+		}
+	});
+	console.log(tokenArr.length);
+	tokenArr.forEach((token) => {
+		console.log(token);
+	});
+};
+
+createTokens(str);
+
+// Find the missing letter
+const lettersList1 = ['O', 'Q', 'R', 'S'];
+const lettersList2 = ['a', 'b', 'c', 'd', 'f'];
+
+const findMissingLetter = (lettersArray) => {
+	let charCode = lettersArray[0].charCodeAt(0) - 1;
+	for (let i = 0; i < lettersArray.length; i++) {
+		charCode++;
+		if (lettersArray[i].charCodeAt(0) !== charCode) {
+			return String.fromCharCode(charCode);
+		}
+	}
+};
+
+console.log(lettersList1, '->', findMissingLetter(lettersList1));
+console.log(lettersList2, '->', findMissingLetter(lettersList2));
