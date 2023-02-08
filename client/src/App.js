@@ -35,6 +35,10 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<div className="box-model">Box Model</div>
+				<div className="out">
+					<div className="in"></div>
+				</div>
 				<h2>Login Form</h2>
 				<form onSubmit={handleSubmit}>
 					<label htmlFor="email">Email:</label>
