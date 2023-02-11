@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import ContextComponent from './components/ContextComponent';
 import CustomHook from './components/CustomHook';
 import UseCallbackTheme from './components/UseCallbackTheme';
 import UseReducerCounter from './components/UseReducerCounter';
 import UseReducerToDo from './components/UseReducerToDo';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
 	const [user, setUser] = useState({
@@ -36,46 +38,50 @@ function App() {
 			console.log(error.message);
 		}
 	};
-	return (
-		<div className="App">
-			<header className="App-header">
-				<UseCallbackTheme />
-				<UseReducerToDo />
-				<UseReducerCounter />
-				<CustomHook />
 
-				<div className="box-model">Box Model</div>
-				<div className="out">
-					<div className="in"></div>
-				</div>
-				<h2>Login Form</h2>
-				<form onSubmit={handleSubmit}>
-					<label htmlFor="email">Email:</label>
-					<input
-						type="text"
-						name="email"
-						value={user.email}
-						onChange={handleChange}
-					/>
-					<label htmlFor="password">Password:</label>
-					<input
-						type="password"
-						name="password"
-						value={user.password}
-						onChange={handleChange}
-					/>
-					<button type="submit">Login</button>
-				</form>
-				<p>
-					Submitted:
-					{responseData?.email
-						? `${responseData.email}, ${responseData.password}`
-						: responseData?.message
-						? `${responseData.message}`
-						: 'No submissions yet.'}
-				</p>
-			</header>
-		</div>
+	return (
+		<ThemeProvider>
+			<div className="App">
+				<header className="App-header">
+					<ContextComponent />
+					<UseCallbackTheme />
+					<UseReducerToDo />
+					<UseReducerCounter />
+					<CustomHook />
+
+					<div className="box-model">Box Model</div>
+					<div className="out">
+						<div className="in"></div>
+					</div>
+					<h2>Login Form</h2>
+					<form onSubmit={handleSubmit}>
+						<label htmlFor="email">Email:</label>
+						<input
+							type="text"
+							name="email"
+							value={user.email}
+							onChange={handleChange}
+						/>
+						<label htmlFor="password">Password:</label>
+						<input
+							type="password"
+							name="password"
+							value={user.password}
+							onChange={handleChange}
+						/>
+						<button type="submit">Login</button>
+					</form>
+					<p>
+						Submitted:
+						{responseData?.email
+							? `${responseData.email}, ${responseData.password}`
+							: responseData?.message
+							? `${responseData.message}`
+							: 'No submissions yet.'}
+					</p>
+				</header>
+			</div>
+		</ThemeProvider>
 	);
 }
 
