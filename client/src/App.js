@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import './App.css';
+import CustomHook from './components/CustomHook';
+import UseCallbackTheme from './components/UseCallbackTheme';
+import UseReducerCounter from './components/UseReducerCounter';
+import UseReducerToDo from './components/UseReducerToDo';
 
 function App() {
 	const [user, setUser] = useState({
@@ -35,6 +39,11 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<UseCallbackTheme />
+				<UseReducerToDo />
+				<UseReducerCounter />
+				<CustomHook />
+
 				<div className="box-model">Box Model</div>
 				<div className="out">
 					<div className="in"></div>
