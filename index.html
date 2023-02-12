@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Center</title>
+		<style>
+			* {
+				margin: 0;
+			}
+			.parent {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 50vh;
+				background-color: blue;
+				/* position: relative; */
+			}
+			.child {
+				/* position: absolute; */
+				color: white;
+				background-color: red;
+				padding: 2rem 3rem;
+				letter-spacing: 5px;
+				text-transform: uppercase;
+				/* left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%); */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="child">
+				<h4>Center</h4>
+			</div>
+		</div>
+	</body>
+</html>

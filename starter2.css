@@ -1,0 +1,51 @@
+/* p {
+	color: aqua;
+}
+
+p.success {
+	color: red;
+}
+
+p.success.agreed {
+	color: blue;
+}
+
+#content {
+	background-color: #ebebeb;
+	padding: 20px;
+} */
+
+/* div .error {
+	color: purple;
+} */
+/* 
+a[href*='oo'] {
+	background-color: greenyellow;
+	color: #000;
+	text-decoration: none;
+	text-transform: capitalize;
+	font-weight: bold;
+}
+
+a[href$='#'] {
+	background-color: red;
+	color: white;
+	border: 1px solid blue;
+} */
+
+div {
+	color: brown;
+	border: 2px solid black;
+	margin: 40px;
+	font-weight: bold;
+}
+
+div p {
+	border: inherit;
+	margin: inherit;
+	color: aquamarine;
+}
+
+p {
+	color: orange;
+}

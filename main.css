@@ -1,0 +1,17 @@
+body {
+	margin: 0;
+	padding: 2rem 3rem;
+}
+
+span {
+	display: inline-block;
+	padding: 20px;
+	margin: 20px;
+}
+
+div {
+	/* display: inline; */
+	border: 5px solid crimson;
+	padding: 20px;
+	margin: 20px;
+}
